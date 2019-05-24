@@ -1,0 +1,105 @@
+body{
+    background-color: whitesmoke ;
+	width: 100%;
+    padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+
+.sale{
+	
+	display: inline-flex ; 
+	font-weight: 700;
+	font-size: 17pt;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 7px;
+	font: bold;
+}
+ul li:hover
+{
+    background: #EFEFEF;
+    transition-duration: 0.05s;
+    cursor: pointer;
+}
+.info{
+	
+	display: block;
+	padding: 50px;
+	text-align: center;
+	font-weight: 700px;
+	font-size: 20pt;
+	color: black;
+	margin:auto;
+	width: 100%;
+}
+.menu{
+	
+	height: 40px;
+	padding: 0;
+	margin: 0;
+	border-bottom: black solid thin;
+}
+.container{
+	padding-top: 90px;
+	width:80%;
+	margin:auto;
+}
+
+.carslist{
+	display: flex;
+	flex-flow: wrap;
+}
+.car{
+	padding: 20px;
+}
+.dropdown{
+	visibility: hidden;
+	opacity: 0;
+	display: none;
+	position: absolute;
+	background: white;
+	margin-top: 25px;
+	margin-left: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-family: Arial, Helvetica, Geneva, sans-serif;
+	font-size: 0.6em;
+}
+ul li:hover ul, ul li ul:hover {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+.login{
+	float: right;
+	/* display: block; */
+	font-weight: 700;
+	font-size: 17pt;
+	padding-right: 20px;
+	padding-left: 30px;
+	padding-top: 7px;
+	font: bold;
+	list-style-type: none;
+}
+li{
+	display: block;
+	color: #3366cc;
+	font-family: helvetica;
+}
+.sale-items{
+	padding-left: 0px;
+	margin-left: 10px;
+}
+a{
+	text-decoration: none;
+}
+ul ul li {
+	
+	padding: 3px;
+	padding-left: 5px;
+
+
+}
