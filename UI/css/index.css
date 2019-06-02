@@ -31,7 +31,7 @@ ul li:hover
 	text-align: center;
 	font-weight: 700px;
 	font-size: 20pt;
-	color: black;
+	color: brown;
 	margin:auto;
 	width: 100%;
 }
@@ -40,6 +40,7 @@ ul li:hover
 	height: 40px;
 	padding: 0;
 	margin: 0;
+	background-color: brown;
 	border-bottom: black solid thin;
 }
 .container{
