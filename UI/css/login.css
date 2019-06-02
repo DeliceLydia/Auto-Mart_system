@@ -1,5 +1,8 @@
 body {
-    background:#848484;
+    background: url(../assets/vehicules.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
 
 .login {
