@@ -18,8 +18,7 @@ a{
 	padding-top: 7px;
 	font: bold;
 }
-ul li:hover
-{
+ul li:hover {
     background: #EFEFEF;
     transition-duration: 0.05s;
     cursor: pointer;
@@ -34,6 +33,10 @@ ul li:hover
 	color: brown;
 	margin:auto;
 	width: 100%;
+}
+p{
+	margin: 0px;
+	padding: 0px;
 }
 .menu{
 	
@@ -98,7 +101,6 @@ ul li:hover ul, ul li ul:hover {
 	border-radius: 15px;
 	background: white;
 	
-
 }
 .menu ul .login a{
 	color: black;
@@ -158,9 +160,10 @@ ul ul li {
 
 .prod-info a{
 	color: white;
+	margin: 5px;
 	margin-right: 7px;
 	border: maroon solid 1px ;
 	border-radius: 15px;
-	background:rgb(133, 48, 48);
+	background: #e66b02;
 }
 
