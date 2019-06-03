@@ -41,6 +41,15 @@ ul li:hover
 	padding: 0;
 	margin: 0;
 	border-bottom: black solid thin;
+	background: rgb(165, 38, 91);
+
+}
+.menu ul li a{
+	color: white;
+	font-size: 20px;
+}
+.menu ul ul li a{
+	color: black;
 }
 .container{
 	padding-top: 90px;
@@ -83,6 +92,15 @@ ul li:hover ul, ul li ul:hover {
 	padding-top: 7px;
 	font: bold;
 	list-style-type: none;
+	margin-right: 7px;
+	border: maroon solid 1px ;
+	border-radius: 15px;
+	background: white;
+	
+
+}
+.menu ul .login a{
+	color: black;
 }
 li{
 	display: block;
@@ -135,5 +153,13 @@ ul ul li {
 	border: 2px solid;
 	color: black;
 	font-size: 20px;
+}
+
+.prod-info a{
+	color: white;
+	margin-right: 7px;
+	border: maroon solid 1px ;
+	border-radius: 15px;
+	background:rgb(133, 48, 48);
 }
 
