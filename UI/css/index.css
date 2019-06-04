@@ -92,15 +92,10 @@ ul li:hover ul, ul li ul:hover {
 	padding-left: 30px;
 	padding-top: 7px;
 	font: bold;
-	list-style-type: none;
-	margin-right: 7px;
-	border: maroon solid 1px ;
-	border-radius: 15px;
-	background: white;
 	
 }
 .menu ul .login a{
-	color: black;
+	color: white;
 }
 li{
 	display: block;
@@ -167,7 +162,7 @@ ul ul li {
 .delete {
 	color: white;
 	padding: 2px;
-	margin: 5px;
+	margin: 1px;
 	margin-right: 5px;
 	border: maroon solid 1px ;
 	border-radius: 15px;
