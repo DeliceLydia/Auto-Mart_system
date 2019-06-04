@@ -64,6 +64,7 @@ ul li:hover {
 .car{
 	padding: 20px;
 }
+
 .dropdown{
 	visibility: hidden;
 	opacity: 0;
@@ -139,6 +140,7 @@ ul ul li {
 	width: 100%;
 }
 .prod-info {
+	
 	float: left;
 	padding: 20px;
 	font: 1em sans-serif;
@@ -161,5 +163,14 @@ ul ul li {
 	border: maroon solid 1px ;
 	border-radius: 15px;
 	background: #e66b02;
+}
+.delete {
+	color: white;
+	padding: 2px;
+	margin: 5px;
+	margin-right: 5px;
+	border: maroon solid 1px ;
+	border-radius: 15px;
+	background: #af3535a8;
 }
 
