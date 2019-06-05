@@ -6,6 +6,7 @@ const signup = {
             first_name: Joi.string().required(),
             last_name: Joi.string().required(),
             email: Joi.string().email().required(),
+            password: Joi.string().required(),
             address: Joi.string(),
             is_admin: Joi.boolean()
         };
