@@ -6,6 +6,7 @@ import updateOrder from '../controllers/updateOrder';
 import mark from '../controllers/mark';
 import auth from '../middleware/auth';
 import updatePrice from '../controllers/updatePrice';
+import getCar from '../controllers/specificCar';
 
 const router = express.Router();
 
@@ -23,6 +24,9 @@ router.patch('/api/v1/car/:id/status', auth, mark);
 
 // UpdatePriceOfTheCar
 router.patch('/api/v1/car/:id/price', auth, updatePrice);
+
+// SpecificCar
+router.get('/api/v1/car/:id', auth, getCar);
 
 
 export default router;
