@@ -1,6 +1,7 @@
 const users = [];
 
 const user1 = {
+    id: 1,
     first_name: 'Delice',
     last_name: 'Lydia',
     email: 'admin@gmail.com',
