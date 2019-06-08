@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import express from 'express';
 import signup from '../controllers/signup';
 import signin from '../controllers/signin';
