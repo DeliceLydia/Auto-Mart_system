@@ -8,6 +8,7 @@ import auth from '../middleware/auth';
 import updatePrice from '../controllers/updatePrice';
 import getCar from '../controllers/specificCar';
 import getUnsoldCars from '../controllers/unsoldCar';
+import getUnsoldCarsWithinPriceRange from '../controllers/PriceRange';
 
 const router = express.Router();
 
@@ -32,5 +33,7 @@ router.get('/api/v1/car/:id', auth, getCar);
 // UnsoldCars
 router.get('/api/v1/car', auth, getUnsoldCars);
 
+// UnsoldCars within price range
+router.get('/api/v1/cars', auth, getUnsoldCarsWithinPriceRange);
 
 export default router;
