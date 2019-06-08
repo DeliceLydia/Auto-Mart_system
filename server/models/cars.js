@@ -11,8 +11,8 @@ const car1 = {
   manufacturer: 'ford',
   model: 'ford 2019',
   body_type: 'car',
-
 };
+cars.push(car1);
 const car2 = {
   id: 2,
   owner: 2,
@@ -24,6 +24,7 @@ const car2 = {
   model: 'nissan 2019',
   body_type: 'car',
 };
+cars.push(car2);
 const car3 = {
   id: 3,
   owner: 3,
@@ -35,6 +36,5 @@ const car3 = {
   model: 'mercedes benz 2019',
   body_type: 'car',
 };
-
-cars.push(car1, car2, car3);
+cars.push(car3);
 export default cars;
