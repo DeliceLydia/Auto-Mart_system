@@ -9,6 +9,7 @@ import updatePrice from '../controllers/updatePrice';
 import getCar from '../controllers/specificCar';
 import getUnsoldCars from '../controllers/unsoldCar';
 import getUnsoldCarsWithinPriceRange from '../controllers/PriceRange';
+import deletePostedCarAd from '../controllers/deleteAd';
 
 const router = express.Router();
 
@@ -35,5 +36,8 @@ router.get('/api/v1/car', auth, getUnsoldCars);
 
 // UnsoldCars within price range
 router.get('/api/v1/cars', auth, getUnsoldCarsWithinPriceRange);
+
+// deletePostCarAd
+router.delete('/api/v1/car/:id', auth, deletePostedCarAd);
 
 export default router;
