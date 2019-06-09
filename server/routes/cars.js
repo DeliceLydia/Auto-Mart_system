@@ -10,6 +10,7 @@ import getCar from '../controllers/specificCar';
 import getUnsoldCars from '../controllers/unsoldCar';
 import getUnsoldCarsWithinPriceRange from '../controllers/PriceRange';
 import deletePostedCarAd from '../controllers/deleteAd';
+import allCars from '../controllers/allCars';
 
 const router = express.Router();
 
@@ -27,6 +28,10 @@ router.patch('/api/v1/car/:id/status', auth, mark);
 
 // UpdatePriceOfTheCar
 router.patch('/api/v1/car/:id/price', auth, updatePrice);
+
+// allPostedAds
+router.get('/api/v1/car/all', auth, allCars);
+
 
 // SpecificCar
 router.get('/api/v1/car/:id', auth, getCar);
