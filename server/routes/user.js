@@ -1,14 +1,15 @@
-/* eslint-disable linebreak-style */
 import express from 'express';
-import signup from '../controllers/signup';
-import signin from '../controllers/signin';
+import json from 'express';
+import {signin, signup} from '../controllers/users';
 
-const router = express.Router();
+
+const user_router = express.Router();
+user_router.use(json());
 
 // signup
-router.post('/api/v1/auth/signup', signup);
+user_router.post('/api/v1/auth/signup', signup);
 // signin
-router.post('/api/v1/auth/signin', signin);
+user_router.post('/api/v1/auth/signin', signin);
 
 
-export default router;
+export default user_router;

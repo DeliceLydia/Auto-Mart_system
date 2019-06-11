@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const Ads = [];
 const car1 = {
   id: 1,
