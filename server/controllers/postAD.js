@@ -1,6 +1,6 @@
 import validatePost from '../helpers/postAD';
-import ads from '../models/Ads';
 import moment from 'moment';
+import cars from '../models/cars';
 
 const validator = require('../helpers/postAD');
 
@@ -15,7 +15,7 @@ const post = (req, res) => {
 
     });
   }
-  const id = parseInt(ads.length + 1, 10);
+  const id = parseInt(cars.length + 1, 10);
   const car = {
     id,
     email: req.body.email,
@@ -27,7 +27,7 @@ const post = (req, res) => {
     status: req.body.status,
 
   };
-  ads.push(car);
+  cars.push(car);
   
   res.status(201).json({
     status: 201,

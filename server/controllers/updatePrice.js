@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import moment from 'moment';
 import validatePrice from '../helpers/updatePrice';
-import ads from '../models/Ads';
+import cars from '../models/cars';
 
 const updatePrice = (req, res) => {
   try {
@@ -16,7 +16,7 @@ const updatePrice = (req, res) => {
   }
 
   const carId = req.params.id;
-  const carIndex = ads.findIndex(o => o.id === parseInt(carId, 10));
+  const carIndex = cars.findIndex(o => o.id === parseInt(carId, 10));
   if (carIndex > -1) {
     const originalCar = ads[carIndex];
     const newCar = {
