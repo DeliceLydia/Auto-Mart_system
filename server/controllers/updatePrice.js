@@ -4,7 +4,8 @@ import validatePrice from '../helpers/updatePrice';
 import ads from '../models/Ads';
 
 const updatePrice = (req, res) => {
-  const { error } = validatePrice.validation(req.body);
+  try {
+    const { error } = validatePrice.validation(req.body);
   if (error) {
     res.status(400).json({
       status: 400,
@@ -51,5 +52,11 @@ const updatePrice = (req, res) => {
     status: 404,
     error: 'car post not found',
   });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+  }
 };
 export default updatePrice;

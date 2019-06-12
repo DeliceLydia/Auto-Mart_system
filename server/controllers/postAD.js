@@ -1,11 +1,13 @@
 import validatePost from '../helpers/postAD';
-import Ads from '../models/Ads';
+import ads from '../models/Ads';
+import moment from 'moment';
 
 const validator = require('../helpers/postAD');
 
 const postedcar = []
 const post = (req, res) => {
-  const { error } = validator.carsvalidator(req.body);
+  try {
+    const { error } = validator.carsvalidator(req.body);
   if (error) {
    return res.status(400).json({
       status: 400,
@@ -13,10 +15,11 @@ const post = (req, res) => {
 
     });
   }
+  const id = parseInt(ads.length + 1, 10);
   const car = {
-    id: Ads.length +1,
+    id,
     email: req.body.email,
-    created_on: new Date(),
+    created_on: moment().format('LL'),
     manufacturer: req.body.manufacture,
     model: req.body.model,
     price: req.body.price,
@@ -24,12 +27,19 @@ const post = (req, res) => {
     status: req.body.status,
 
   };
-  postedcar.push(car);
+  ads.push(car);
+  
   res.status(201).json({
     status: 201,
     data: car,
   });
 
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+  }
 };
 export default post;
 

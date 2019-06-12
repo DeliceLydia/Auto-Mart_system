@@ -1,7 +1,7 @@
-/* eslint-disable linebreak-style */
 import cars from '../models/cars';
 
 const getCar = (req, res) => {
+ try {
   const car = cars.find(h => h.id === parseInt(req.params.id, 10));
   if (!car) {
     res.status(404).json({
@@ -14,5 +14,11 @@ const getCar = (req, res) => {
       data: car,
     });
   }
+ } catch (error) {
+  res.status(500).json({
+    status: 500,
+    error: 'server'
+  });
+ }
 };
 export default getCar;

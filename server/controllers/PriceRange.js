@@ -2,6 +2,7 @@ import cars from '../models/cars';
 
 
 const getUnsoldCarsWithinPriceRange = (req, res) => {
+ try {
   const unsoldCars = cars.filter(car => car.status === 'available');
   if (!unsoldCars) {
     res.status(404).json({
@@ -28,5 +29,11 @@ const getUnsoldCarsWithinPriceRange = (req, res) => {
     status: 200,
     data: carPriceRange,
   });
+ } catch (error) {
+  res.status(500).json({
+    status: 500,
+    error: 'server'
+  });
+ }
 };
 export default getUnsoldCarsWithinPriceRange;

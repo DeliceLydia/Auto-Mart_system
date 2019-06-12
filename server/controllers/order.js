@@ -7,7 +7,8 @@ import validateOrder from '../helpers/order';
 
 
 const Order = (req, res) => {
-  const { error } = validateOrder.validation(req.body);
+  try {
+    const { error } = validateOrder.validation(req.body);
   if (error) {
     res.status(400).json({
       status: 400,
@@ -17,7 +18,6 @@ const Order = (req, res) => {
     return;
 
   }
-
   const id = parseInt(order.length + 1, 10);
   const newOrder = {
     id,
@@ -55,6 +55,12 @@ const Order = (req, res) => {
       price_offered: newOrder.amount,
     },
   });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+  }
 };
 
 export default Order;

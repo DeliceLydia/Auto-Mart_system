@@ -1,10 +1,9 @@
-/* eslint-disable linebreak-style */
 import cars from '../models/cars';
 import validateUnsold from '../helpers/unsoldCars';
 
-/* eslint-disable linebreak-style */
 const getUnsoldCars = (req, res) => {
-  const { error } = validateUnsold.validation(req.query);
+  try {
+    const { error } = validateUnsold.validation(req.query);
   if (error) {
     res.status(400).json({
       status: 400,
@@ -17,5 +16,11 @@ const getUnsoldCars = (req, res) => {
     status: 200,
     data: unsoldCars,
   });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+  }
 };
 export default getUnsoldCars;
