@@ -1,10 +1,8 @@
-/* eslint-disable linebreak-style */
-//  eslint-disable quotes
-/* eslint-disable linebreak-style */
 import ads from '../models/Ads';
 
 const deletePostedCarAd = (req, res) => {
-  const postedAds = ads.find(g => g.id === parseInt(req.params.id, 10));
+  try {
+    const postedAds = ads.find(g => g.id === parseInt(req.params.id, 10));
   if (!postedAds) {
     res.status(404).json({
       status: 404,
@@ -16,5 +14,11 @@ const deletePostedCarAd = (req, res) => {
       data: 'Car Ad successfully deleted',
     });
   }
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+}
 };
 export default deletePostedCarAd;

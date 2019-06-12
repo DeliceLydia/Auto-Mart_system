@@ -1,4 +1,4 @@
-/* eslint-disable linebreak-style */
+
 const cars = [];
 
 const car1 = {
@@ -37,4 +37,16 @@ const car3 = {
   body_type: 'car',
 };
 cars.push(car3);
+const car4 = {
+  id: 4,
+  owner: 4,
+  created_on: '10/06/2018',
+  state: 'used',
+  status: 'sold',
+  price: 100000,
+  manufucturer: 'Benz',
+  model: 'mercedes benz 2019',
+  body_type: 'car',
+};
+cars.push(car4);
 export default cars;

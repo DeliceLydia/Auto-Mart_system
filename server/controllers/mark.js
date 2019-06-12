@@ -6,6 +6,7 @@ import users from '../models/users';
 import validateMark from '../helpers/mark';
 
 const Order = (req, res) => {
+  try {
   const { error } = validateMark.validation(req.body);
   if (error) {
     res.status(400).json({
@@ -73,6 +74,12 @@ const Order = (req, res) => {
     status: 404,
     error: 'sorry we can not found the car',
   });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+  });
+}
 };
 
 export default Order;

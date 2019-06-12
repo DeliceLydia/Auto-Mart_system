@@ -2,12 +2,12 @@ import Joi from 'joi';
 
 exports.carsvalidator = (cars)=> {
   const schema = {
-    email: Joi.string().required(),
-    manufacturer: Joi.string().required(),
-    model: Joi.string().required(),
+    email: Joi.string().email().trim().required(),
+    manufacturer: Joi.string().trim().required(),
+    model: Joi.string().trim().required(),
     price: Joi.number().required(),
-    state: Joi.string().required(),
-    status: Joi.string().required(),
+    state: Joi.string().trim().required(),
+    status: Joi.string().trim().required(),
   };
 
     

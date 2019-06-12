@@ -1,10 +1,10 @@
-/* eslint-disable linebreak-style */
 import moment from 'moment';
 import order from '../models/order';
 import validateOrder from '../helpers/updateOrder';
 
 const Order = (req, res) => {
-  const { error } = validateOrder.validation(req.body);
+  try {
+    const { error } = validateOrder.validation(req.body);
   if (error) {
     res.status(400).json({
       status: 400,
@@ -60,6 +60,13 @@ const Order = (req, res) => {
     status: 404,
     error: 'order not found',
   });
+  } catch (error) {
+    res.status(500).json({
+      status: 500,
+      error: 'server'
+    });
+
+  }
 };
 
 export default Order;

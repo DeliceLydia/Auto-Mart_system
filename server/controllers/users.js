@@ -1,11 +1,11 @@
-/* eslint-disable linebreak-style */
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import {checkSignup, checkSignin} from '../helpers/validateUser';
 import users from '../models/users';
-import { sign } from 'crypto';
 
-const signup= (req, res)=>{
-    const { error } = checkSignup(req.body);
+const signup= (req, res) => {
+    try {
+        const { error } = checkSignup(req.body);
     if (error) {
         res.status(400).json({
             status: 400,
@@ -13,7 +13,6 @@ const signup= (req, res)=>{
         });
         return;
     }
-
 
     const user = users.find(u => u.email === req.body.email);
     if (user) {
@@ -23,14 +22,16 @@ const signup= (req, res)=>{
         });
         return;
     }
+    bcrypt.hashSync(req.body.password.trim(), 10);
 
+    const id = parseInt(users.length + 1, 10);
     const newUser = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        password: req.body.password,
-        adress: req.body.adress,
-        is_admin: req.body.is_admin,
+        id,
+        first_name: req.body.first_name.trim(),
+        last_name: req.body.last_name.trim(),
+        email: req.body.email.trim(),
+        address: req.body.address.trim(),
+        is_admin: req.body.is_admin
     };
     const payload = {
         first_name: newUser.first_name,
@@ -47,9 +48,16 @@ const signup= (req, res)=>{
         data: newUser
     });
 
-}
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            status: 500,
+            error: 'server'
 
- const signin= (req, res)=>{
+        })
+ }
+}
+    const signin= (req, res)=>{
     const { error } = checkSignin(req.body);
     if (error) {
         res.status(400).json({
@@ -69,7 +77,8 @@ const signup= (req, res)=>{
             });
             return;
         };
-        if (!user.password) {
+        const password = bcrypt.compareSync(req.body.password.trim(), user.password);
+        if (!password) {
             res.status(400).json({
                 status: 400,
                 error: 'incorrect email or password',
@@ -89,16 +98,14 @@ const signup= (req, res)=>{
             token,
             status: 200,
             data: {
-                email: user.email,
-                password: user.password
+                email: user.email
             }
         });
-
-    }catch(err){
-        console.log(err);
+console.log(user.password);
+    }catch(error){
+        console.log(error)
+        }
     }
-   
- }
 export {
     signup,
     signin
