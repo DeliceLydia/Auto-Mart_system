@@ -1,8 +1,8 @@
-import ads from '../models/Ads';
+import cars from '../models/cars';
 
 const deletePostedCarAd = (req, res) => {
   try {
-    const postedAds = ads.find(g => g.id === parseInt(req.params.id, 10));
+    const postedAds = cars.find(g => g.id === parseInt(req.params.id, 10));
   if (!postedAds) {
     res.status(404).json({
       status: 404,

@@ -18,7 +18,7 @@ const signup= (req, res) => {
     if (user) {
         res.status(400).json({
             status: 400,
-            error: 'email taken',
+            message: 'email taken',
         });
         return;
     }
@@ -43,9 +43,10 @@ const signup= (req, res) => {
     const token = jwt.sign(payload, 'secret_key', { expiresIn: '24hrs' });
     users.push(newUser);
     res.status(201).json({
-        token,
+        message: "you signed up successfully!",
         status: 201,
-        data: newUser
+        data: newUser,
+        token
     });
 
     } catch (error) {
@@ -72,16 +73,18 @@ const signup= (req, res) => {
         const user = users.find(u => u.email === req.body.email);
         if (!user) {
             res.status(400).json({
-                status: 400,
-                error: 'incorrect email or password',
+                message: 'incorrect email or password',
+                status: 400
+               ,
             });
             return;
         };
         const password = bcrypt.compareSync(req.body.password.trim(), user.password);
         if (!password) {
             res.status(400).json({
+                message: 'incorrect email or password',
                 status: 400,
-                error: 'incorrect email or password',
+                data
             });
             return;
         };

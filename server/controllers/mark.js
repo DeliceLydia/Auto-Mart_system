@@ -1,7 +1,5 @@
-/* eslint-disable linebreak-style */
 import moment from 'moment';
 import cars from '../models/cars';
-import ads from '../models/Ads';
 import users from '../models/users';
 import validateMark from '../helpers/mark';
 
@@ -21,8 +19,8 @@ const Order = (req, res) => {
   const user = users.findIndex(i => i.id === userId);
 
   const carId = parseInt(req.params.id, 10);
-  const findCarId = ads.findIndex(c => c.id === carId);
-  const originalCar = ads[findCarId];
+  const findCarId = cars.findIndex(c => c.id === carId);
+  const originalCar = cars[findCarId];
   if (findCarId > -1) {
     if (originalCar.status !== 'available') {
       res.status(400).json({
