@@ -51,7 +51,7 @@ const signup= (req, res) => {
     });
 
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         res.status(500).json({
             status: 500,
             error: 'server'
@@ -72,7 +72,7 @@ const signup= (req, res) => {
     try{
 
         const user = users.find(u => u.email === req.body.email);
-        console.log(user);
+        // console.log(user);
         
         if (!user) {
             res.status(400).json({
@@ -108,7 +108,7 @@ const signup= (req, res) => {
                 email: user.email
             }
         });
-console.log(user.password);
+// console.log(user.password);
     }catch(error){
         console.log(error)
         }
