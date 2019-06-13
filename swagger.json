@@ -1,0 +1,696 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "LYDIA DELICE",
+    "description": "TODO: Add Description",
+    "contact": {}
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/car/all": {
+      "get": {
+        "description": "TODO: Add Description",
+        "summary": "http://localhost:3000/api/v1/car/all",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "CarAllGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/3": {
+      "get": {
+        "description": "This is the Api for viewing a specific car",
+        "summary": "http://localhost:3000/api/v1/car/1",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Car3Get",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/car": {
+      "get": {
+        "description": "This API is for viewing all available cars",
+        "summary": "http://localhost:3000/api/v1/car?status=available",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "CarGet",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "description": "Endpoint for posting a car advertissment",
+        "summary": "localhost:3000/api/v1/car",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "CarPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1carrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/1": {
+      "delete": {
+        "description": "TODO: Add Description",
+        "summary": "http://localhost:3000/api/v1/car/1",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Car1Delete",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/order": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "localhost:3000/api/v1/order",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "OrderPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1orderrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/order/1/price": {
+      "patch": {
+        "description": "TODO: Add Description",
+        "summary": "localhost:3000/api/v1/order/1/price",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Order1PricePatch",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1order~11~1pricerequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/1/status": {
+      "patch": {
+        "description": "TODO: Add Description",
+        "summary": "localhost:3000/api/v1/car/1/status",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Car1StatusPatch",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1car~11~1statusrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/car/1/price": {
+      "patch": {
+        "description": "TODO: Add Description",
+        "summary": "localhost:3000/api/v1/car/1/price",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "Car1PricePatch",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1car~11~1pricerequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/auth/signin": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "signin",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "AuthSigninPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/signinrequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "description": "TODO: Add Description",
+        "summary": "localhost:3000/api/v1/auth/signup",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "AuthSignupPost",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/localhost%3A3000~1api~1v1~1auth~1signuprequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "definitions": {
+    "localhost:3000/api/v1/orderrequest": {
+      "title": "localhost:3000/api/v1/orderrequest",
+      "example": {
+        "car_id": 1,
+        "buyer": 1,
+        "amount": 10000
+      },
+      "type": "object",
+      "properties": {
+        "car_id": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "buyer": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "amount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "car_id",
+        "buyer",
+        "amount"
+      ]
+    },
+    "localhost:3000/api/v1/order/1/pricerequest": {
+      "title": "localhost:3000/api/v1/order/1/pricerequest",
+      "example": {
+        "new_price_offered": 10000
+      },
+      "type": "object",
+      "properties": {
+        "new_price_offered": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "new_price_offered"
+      ]
+    },
+    "localhost:3000/api/v1/car/1/statusrequest": {
+      "title": "localhost:3000/api/v1/car/1/statusrequest",
+      "example": {
+        "status": "sold"
+      },
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "localhost:3000/api/v1/car/1/pricerequest": {
+      "title": "localhost:3000/api/v1/car/1/pricerequest",
+      "example": {
+        "price": 10000
+      },
+      "type": "object",
+      "properties": {
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "required": [
+        "price"
+      ]
+    },
+    "signinrequest": {
+      "title": "signinrequest",
+      "example": {
+        "first_name": "ingabire",
+        "last_name": "diane",
+        "email": "diane@gmail.com",
+        "password": "123789",
+        "address": "kacyiru"
+      },
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+        "address"
+      ]
+    },
+    "localhost:3000/api/v1/auth/signuprequest": {
+      "title": "localhost:3000/api/v1/auth/signuprequest",
+      "example": {
+        "first_name": "ngabire",
+        "last_name": "parfaite",
+        "email": "parfaite@gmail.com",
+        "password": "124hfjjf",
+        "address": "remera"
+      },
+      "type": "object",
+      "properties": {
+        "first_name": {
+          "type": "string"
+        },
+        "last_name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "email",
+        "password",
+        "address"
+      ]
+    },
+    "localhost:3000/api/v1/auth/signinrequest": {
+      "title": "localhost:3000/api/v1/auth/signinrequest",
+      "example": {
+        "email": "admin@gmail.com",
+        "password": "123456"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "localhost:3000/api/v1/carrequest": {
+      "title": "localhost:3000/api/v1/carrequest",
+      "example": {
+        "email": "lydia@gmail.com",
+        "manufacturer": "benz",
+        "model": "benz 2017",
+        "price": 10000,
+        "state": "new",
+        "status": "unsold"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "manufacturer": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "state": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "manufacturer",
+        "model",
+        "price",
+        "state",
+        "status"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

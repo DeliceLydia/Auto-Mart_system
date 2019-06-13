@@ -1,7 +1,7 @@
 {
   "name": "auto-mart_system",
   "version": "1.0.0",
-  "description": "This is an online automobiles marker.",
+  "description": "This is an online shop for automobiles of diverse makes, model or body type. with AUTO MART, users will be able to sell their cars or buy from trusted dealerships or private sellers",
   "main": "server.js",
   "directories": {
     "test": "tests"
@@ -13,7 +13,9 @@
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.24.0",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "swagger-jsdoc": "^3.2.9",
+    "swagger-ui-express": "^4.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -32,7 +34,8 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node ./server/server.js",
+    "dev-start": "nodemon --exec babel-node ./server/server.js",
+    "start": "babel-node ./server/server.js",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit ./tests/*/*.js || true",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
