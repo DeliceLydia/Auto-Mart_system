@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import moment from 'moment';
 import order from '../models/order';
 import users from '../models/users';
@@ -37,8 +36,8 @@ const Order = (req, res) => {
 
   const carId = cars.find(e => e.id === parseInt(newOrder.car_id, 10));
   if (!carId) {
-    return res.status(404).json({
-      status: 404,
+    return res.status(401).json({
+      status: 401,
       error: 'car ordered not found',
     });
   }
