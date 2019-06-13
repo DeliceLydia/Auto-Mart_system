@@ -3,3 +3,4 @@ package-lock.json
 assets/
 coverage
 .nyc_output
+.env
