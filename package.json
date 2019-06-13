@@ -16,7 +16,11 @@
     "nodemon": "^1.19.1",
     "nyc": "^14.1.1",
     "swagger-jsdoc": "^3.2.9",
-    "swagger-ui-express": "^4.0.6"
+    "swagger-ui-express": "^4.0.6",
+    "@babel/node": "^7.4.5",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -35,7 +39,7 @@
   },
   "scripts": {
     "dev-start": "nodemon --exec babel-node ./server/server.js",
-    "start": "nodemon babel-node ./server/server.js",
+    "start": "nodemon --exec babel-node ./server/server.js",
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit ./tests/*/*.js || true",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
