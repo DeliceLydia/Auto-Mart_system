@@ -22,7 +22,7 @@ const signup= (req, res) => {
         });
         return;
     }
-    bcrypt.hashSync(req.body.password.trim(), 10);
+    const hashedPass = bcrypt.hashSync(req.body.password.trim(), 10);
 
     const id = parseInt(users.length + 1, 10);
     const newUser = {
@@ -31,7 +31,8 @@ const signup= (req, res) => {
         last_name: req.body.last_name.trim(),
         email: req.body.email.trim(),
         address: req.body.address.trim(),
-        is_admin: req.body.is_admin
+        is_admin: req.body.is_admin,
+        password: hashedPass
     };
     const payload = {
         first_name: newUser.first_name,
@@ -71,20 +72,22 @@ const signup= (req, res) => {
     try{
 
         const user = users.find(u => u.email === req.body.email);
+        console.log(user);
+        
         if (!user) {
             res.status(400).json({
-                message: 'incorrect email or password',
-                status: 400
+                status: 400,
+                error: 'incorrect email or password'
                ,
             });
             return;
         };
+       
         const password = bcrypt.compareSync(req.body.password.trim(), user.password);
         if (!password) {
             res.status(400).json({
-                message: 'incorrect email or password',
                 status: 400,
-                data
+                error: 'incorrect email or password'
             });
             return;
         };
@@ -98,8 +101,9 @@ const signup= (req, res) => {
         };
         const token = jwt.sign(payload, 'secret_key', { expiresIn: '24hrs' });
         res.status(200).json({
-            token,
+            message:"signed in successfully!",
             status: 200,
+            token,
             data: {
                 email: user.email
             }
