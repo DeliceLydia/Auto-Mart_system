@@ -30,9 +30,9 @@ This is an online shop for automobiles of diverse makes, model or body type. wit
 | /api/v1/order/:id | PATCH | Get the user to update the price or his/her purchase order |
 | /api/v1/car/:id | PATCH | Get user to mark his/her posted AD as sold  |
 | /api/v1/car/:id | GET | Get user to view a specific car |
+| /api/v1/car/all| GET | Get user to view all cars|
 | /api/v1/GET /car?status=available | GET | Get user to User can view all unsold cars |
 | /api/v1/cars?status=available&min_price=XXXValue&max_price=XXXValue | GET | Get the user to view all unsold cars within a price range |
-| /api/v1/cars/posted | GET | Get the Aamin to view all posted ads whether sold or unsold |
 
 ## Used Tools
 
