@@ -109,4 +109,4 @@ It will install the node_modules which will help you run the project on your loc
 ---
 
 ## License & copyright
-Copyright (c) Lydia Ingabire, Junior Software developer
+Copyright (c) Lydia Ingabire, Software developer
